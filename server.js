@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('view-engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', {data: null, error: false})
+    res.render('index.ejs')
 });
 
 app.get('/lon=:longitude&lat=:latitude', (req, res) => {
@@ -17,14 +17,14 @@ app.get('/lon=:longitude&lat=:latitude', (req, res) => {
     let latitude = req.params.latitude;
     let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey.testing}`;
     fetch(apiLink)
-        .then(result => {
-            console.log(result.text());
-            res.render('result.ejs', {data: result.text(), error: false})
+        .then(result => result.json())
+        .then(json => {
+            res.render('result.ejs', {data: json, error: false})
         })
         .catch(err => {
+            res.render('result.ejs', {error: true})
             console.log(err)
-            // res.render('index.ejs', {data: result, error: true});
         })
 });
 
-app.listen(3000)
+app.listen(process.env.port || 3000)
