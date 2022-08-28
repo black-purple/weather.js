@@ -1,0 +1,20 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "A web app that tells you the weather of your city",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Abderrahman DAKIR ALLAH (black-purple)",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.19"
+  }
+}

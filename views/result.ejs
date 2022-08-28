@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta info about the page -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A web app that tells you the weather of your city.">
+    <meta property="og:title" content="Weather.js">
+    <meta property="og:description" content="A web app that tells you the weather of your city.">
+    <meta property="og:image" content="imgs/logo.png"> 
+    <!-- Styles and favicon -->
+    <link rel="shortcut icon" href="imgs/favicon.png?v=1.1" type="image/x-icon">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Functionality -->
+    <script src="index.js" defer></script>
+    <title>Weather &bull; Home</title>
+</head>
+<body class="bg-dark text-light">
+    <header class="px-5">
+        <a href="/"><span class="alert alert-info px-2 py-2 m-3 text-center fw-bold">Weather.js</span></a>
+        <button type="button" class="btn btn-dark p-3 m-3 text-center border-1 border-secondary " id="theme">
+            <i class="bi bi-brightness-high-fill text-warning"></i>
+        </button>
+    </header>
+    <main>
+        <span>
+            <h1>Welcome to <span class="alert alert-info py-0 px-2 mx-2 fw-bold">Weather.js</span></h1>
+            <h2 class="my-3 mb-5">Your friendly web app to get your city's weather</h2>
+            <button type="button" class="btn btn-info rounded-circle py-3 px-4" id="search"><i class="bi bi-search text-light fs-3 mt-5"></i></button>
+        </span>
+        <span id="resultPlaceholder" class="p-2 mt-5 border-1 border-secondary">
+            <% if (Object.keys(data) === 0) { %>
+                <h3>Oops! Looks like something went wrong</h3>
+                <h4>Try again later</h4>
+            <% } else { %>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            <% } %>
+        </span>
+    </main>
+    <footer class="py-4 px-5">
+        <span class="text-secondary">
+            Made with <i class="bi bi-heart-fill text-danger ms-2 me-3"></i> &bull; &nbsp; by <span class="text-info">black-purple</span>
+        </span>
+        <span>
+            <a href="https://github.com/black-purple" class="btn btn-outline-secondary px-2" rel="nofollow" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com/in/abderrahman-dakirallah" class="btn btn-outline-secondary px-2" rel="nofollow" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </span>
+    </footer>
+</body>
+</html>
