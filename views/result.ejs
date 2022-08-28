@@ -30,17 +30,27 @@
         <span>
             <h1>Welcome to <span class="alert alert-info py-0 px-2 mx-2 fw-bold">Weather.js</span></h1>
             <h2 class="my-3 mb-5">Your friendly web app to get your city's weather</h2>
-            <button type="button" class="btn btn-info rounded-circle py-3 px-4" id="search"><i class="bi bi-search text-light fs-3 mt-5"></i></button>
+            <a href="/" class="btn btn-info rounded-circle py-3 px-4"><i class="bi bi-house text-light fs-3 mt-5"></i></a>
         </span>
-        <span id="resultPlaceholder" class="p-2 mt-5 border-1 border-secondary">
-            <% if (Object.keys(data) === 0) { %>
+        <span id="resultPlaceholder1" class="p-1 mt-5 border-1 border-secondary">
+            <% if (error) { %>
                 <h3>Oops! Looks like something went wrong</h3>
                 <h4>Try again later</h4>
             <% } else { %>
                 <table>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <th>Country, City</th>
+                        <td><%= data.sys.country %>, <%= data.name %></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><%= data.weather[0].main %>, <%= data.weather[0].description %></td>
+                    </tr>
+                    <tr>
+                        <th>Temperature</th>
+                        <td><%= data.main.temp %> K&deg;</td>
+                        <td><%= (data.main.temp -273.15).toFixed(2) %> C&deg;</td>
+                        <td><%= (1.8 * (data.main.temp -273) + 32).toFixed(2) %> F&deg;</td>
                     </tr>
                 </table>
             <% } %>
