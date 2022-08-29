@@ -1,5 +1,6 @@
-import {express as app} from 'express';
+import express from 'express';
 import fetch from 'node-fetch';
+const app = express();
 
 app.use(express.static('public'));
 app.set('view-engine', 'ejs');
