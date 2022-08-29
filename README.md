@@ -8,15 +8,12 @@ After clicking on the search button the browser will prompt you to allow geoloca
 
 Click on ```Allow``` and let the app do it's magic
 
-### For devs
+### Set up
 
-The app uses [openweathermap](https://openweathermap.org)'s API to get weather data, get your own ```API key``` on their website and create a file in the project folder called `env.json`
->```json
-> {
->   "apiKey": {
->       "testing": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // your apiKey here
->   }
-> }
+The app uses [openweathermap](https://openweathermap.org)'s API to get weather data, get your own ```API key``` on their website and paste it in the ```apiKey``` variable
+>```js
+> // server.js : line 11
+>   let apiKey =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // your apiKey here
 >```
 ## Technologies used
 
