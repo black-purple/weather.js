@@ -12,7 +12,7 @@ Click on ```Allow``` and let the app do it's magic
 
 The app uses [openweathermap](https://openweathermap.org)'s API to get weather data, get your own ```API key``` on their website and paste it in the ```apiKey``` variable
 >```js
-> // server.js : line 11
+> // server.js : line 12
 >   let apiKey =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // your apiKey here
 >```
 ## Technologies used
