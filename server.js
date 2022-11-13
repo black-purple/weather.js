@@ -1,29 +1,31 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from "dotenv";
+
+dotenv.config();
 const app = express();
 
 app.use(express.static('public'));
-app.set('view-engine', 'ejs');
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    res.render('index')
 });
 
-let apiKey = '' //* Paste your API key here before starting the app
-
-app.get('/lon=:longitude&lat=:latitude', (req, res) => {
-    let longitude = req.params.longitude
-    let latitude = req.params.latitude;
-    let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+app.get('/:lon&:lat', (req, res) => {
+    let longitude = req.params.lon
+    let latitude = req.params.lat;
+    let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.APIKEY_TEST}`;
     fetch(apiLink)
         .then(result => result.json())
         .then(json => {
-            res.render('result.ejs', {data: json, error: false})
+            res.render('result', { data: json, error: false })
         })
         .catch(err => {
-            res.render('result.ejs', {error: true})
+            res.render('result', { error: true })
             console.log(err)
         })
 });
 
-app.listen(process.env.port || 3000)
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.log("Listening on port", port) });

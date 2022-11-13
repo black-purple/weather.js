@@ -10,7 +10,7 @@ const searchButton = document.querySelector('#search')
 searchButton.onclick = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-            window.location.href = `lon=${position.coords.longitude}&lat=${position.coords.latitude}`;
+            window.location.href = `${position.coords.longitude}&${position.coords.latitude}`;
         }, err => {
             console.log(err);
         });

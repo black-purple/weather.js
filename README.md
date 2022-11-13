@@ -10,11 +10,8 @@ Click on ```Allow``` and let the app do it's magic
 
 ### Set up
 
-The app uses [openweathermap](https://openweathermap.org)'s API to get weather data, get your own ```API key``` on their website and paste it in the ```apiKey``` variable
->```js
-> // server.js : line 12
->   let apiKey =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // your apiKey here
->```
+The app uses [openweathermap](https://openweathermap.org)'s API to get weather data, get your own ```API key``` on their website and add it to your ```environement variables```
+
 ## Technologies used
 
 ![HTML](https://img.shields.io/static/v1?label=%20&message=HTML&color=%23E34F26&labelColor=%23ff000000&logo=html5)
