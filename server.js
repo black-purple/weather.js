@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/:lon&:lat', (req, res) => {
     let longitude = req.params.lon
     let latitude = req.params.lat;
-    let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.APIKEY_TEST}`;
+    let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.APIKEY}`;
     fetch(apiLink)
         .then(result => result.json())
         .then(json => {
